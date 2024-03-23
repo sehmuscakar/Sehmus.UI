@@ -1,0 +1,37 @@
+﻿@model Sehmus.DataAccess.Entities.Hero
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h4>Hero(Baş) Güncelleme Paneli</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Title" class="control-label"></label>
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Expert" class="control-label"></label>
+                <input asp-for="Expert" class="form-control" />
+                <span asp-validation-for="Expert" class="text-danger"></span>
+            </div>
+             <br />
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-outline-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<hr />
+<div>
+    <a class="btn btn-secondary" asp-action="Index">Listeye Geri Dön</a>
+</div>

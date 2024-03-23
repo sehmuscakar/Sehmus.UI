@@ -1,0 +1,13 @@
+﻿@model List<Sehmus.DataAccess.Entities.Hero>
+
+<section id="hero" class="d-flex flex-column justify-content-center align-items-center">
+    @foreach (var item in Model)
+    {
+        
+    <div class="hero-container" data-aos="fade-in">
+        <h1>@item.Title</h1>
+        <p><span class="typed" data-typed-items="@item.Expert"></span></p>
+    </div>
+    }
+
+</section><!-- End Hero -->

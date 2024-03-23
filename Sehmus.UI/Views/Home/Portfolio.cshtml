@@ -1,0 +1,150 @@
+﻿@model Sehmus.DataAccess.Entities.Portfolio
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Yazılım Geliştiricisi Ali Asaf Günşar</title>
+    <meta content="" name="description">
+    <meta content="" name="keywords">
+
+    <!-- Favicons -->
+    <link href="~/iPortfolio/assets/img/development.png" rel="icon">
+    <link href="~/iPortfolio/assets/img/development.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="~/iPortfolio/assets/vendor/aos/aos.css" rel="stylesheet">
+    <link href="~/iPortfolio/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/iPortfolio/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+    <link href="~/iPortfolio/assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="~/iPortfolio/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+    <link href="~/iPortfolio/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="~/iPortfolio/assets/css/style.css" rel="stylesheet">
+
+    <!-- =======================================================
+    * Template Name: iPortfolio
+    * Updated: Jan 29 2024 with Bootstrap v5.3.2
+    * Template URL: https://bootstrapmade.com/iportfolio-bootstrap-portfolio-websites-template/
+    * Author: BootstrapMade.com
+    * License: https://bootstrapmade.com/license/
+    ======================================================== -->
+</head>
+
+<body>
+
+    <!-- ======= Mobile nav toggle button ======= -->
+    <i class="bi bi-list mobile-nav-toggle d-xl-none"></i>
+
+    <!-- ======= Header ======= -->
+    @await Component.InvokeAsync("Header2")
+
+    <main id="main">
+
+        <!-- ======= Breadcrumbs ======= -->
+        <section id="breadcrumbs" class="breadcrumbs">
+            <div class="container">
+
+                <div class="d-flex justify-content-between align-items-center">
+                    <h2>Portföy Detay</h2>
+                    <ol>
+                        <li><a href="/Home/Anasayfa">Anasayfa</a></li>
+                        <li>Portföy Detay</li>
+                    </ol>
+                </div>
+
+            </div>
+        </section><!-- End Breadcrumbs -->
+        <!-- ======= Portfolio Details Section ======= -->
+        <section id="portfolio-details" class="portfolio-details">
+            <div class="container">
+
+                <div class="row gy-4">
+                    <div class="col-lg-8">
+                        <div class="portfolio-details-slider swiper">
+                            <div class="swiper-wrapper align-items-center">
+
+                                <div class="swiper-slide">
+                                    <img src="~/Img/@Model.ImageUrl1" alt="" height="400">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="~/Img/@Model.ImageUrl2" alt="" height="400">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="~/Img/@Model.ImageUrl3" alt="" height="400">
+                                </div>
+                                <div class="swiper-slide">
+                                    <img src="~/Img/@Model.ImageUrl4" alt="" height="400">
+                                </div>
+                            </div>
+                            <div class="swiper-pagination"></div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4">
+                        <div class="portfolio-info">
+                            <h3>Proje Bilgileri</h3>
+                            <ul>
+                                <li><strong>Kategori</strong>: @Model.Category</li>
+                                <li><strong>Müşteri</strong>: @Model.Title</li>
+                                <li><strong>Kullanılan Teknolojiler</strong>: @Model.TechnologiesUsed</li>
+                                <li><strong>Proje Url</strong>: <a href="@Model.ProjectUrl">@Model.ProjectUrl</a></li>
+                            </ul>
+                        </div>
+                        <div class="portfolio-description">
+                            <h2>Açıklama</h2>
+                            <p>
+                                @Model.Description
+                            </p>
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </section><!-- End Portfolio Details Section -->
+
+    </main><!-- End #main -->
+    <!-- ======= Footer ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                <p class="copyright">Copyright &copy; <span id="current-year"></span> <strong>Ali Asaf Günşar</strong> Tüm Hakları Saklıdır.</p>
+            </div>
+
+        </div>
+    </footer><!-- End  Footer -->
+    <script>
+        document.getElementById("current-year").innerHTML = new Date().getFullYear();
+    </script>
+
+
+    <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+    <!-- Vendor JS Files -->
+    <script src="~/iPortfolio/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+    <script src="~/iPortfolio/assets/vendor/aos/aos.js"></script>
+    <script src="~/iPortfolio/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/iPortfolio/assets/vendor/glightbox/js/glightbox.min.js"></script>
+    <script src="~/iPortfolio/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+    <script src="~/iPortfolio/assets/vendor/swiper/swiper-bundle.min.js"></script>
+    <script src="~/iPortfolio/assets/vendor/typed.js/typed.umd.js"></script>
+    <script src="~/iPortfolio/assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <script src="~/iPortfolio/assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="~/iPortfolio/assets/js/main.js"></script>
+
+</body>
+
+</html>

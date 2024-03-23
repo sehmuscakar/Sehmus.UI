@@ -1,0 +1,63 @@
+﻿@model IEnumerable<Sehmus.DataAccess.Entities.Resume>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Özet Liste Paneli</h3>
+<br />
+<p>
+    <a class="btn btn-outline-success" asp-action="Create">Yeni Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Title1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Title2)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description1)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Description2)
+            </th>
+       
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Title2)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description1)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description2)
+            </td>
+          
+            <td>
+                    <a class="btn btn-outline-danger" asp-action="Edit" asp-route-id="@item.Id">Güncelle</a>
+                    <hr>
+                    <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

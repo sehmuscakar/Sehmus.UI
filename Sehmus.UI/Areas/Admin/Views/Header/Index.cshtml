@@ -1,0 +1,70 @@
+﻿@model IEnumerable<Sehmus.DataAccess.Entities.Header>
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h3>Sidebar Liste Paneli</h3>
+<br />
+<p>
+    <a class="btn btn-outline-success" asp-action="Create">Yeni Ekle</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ImageUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.FullName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Youtube)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.İnstagram)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Github)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Linkedin)
+            </th>
+         
+       
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                    <img src="~/Img/@Html.DisplayFor(modelItem => item.ImageUrl)" alt="" class="form control" height="50" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FullName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Youtube)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.İnstagram)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Github)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Linkedin)
+            </td>
+          
+            <td>
+                    <a class="btn btn-outline-danger" asp-action="Edit" asp-route-id="@item.Id">Güncelle</a>
+                             <hr>
+                            <a class="btn btn-outline-danger" asp-action="Delete" asp-route-id="@item.Id">Sil</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

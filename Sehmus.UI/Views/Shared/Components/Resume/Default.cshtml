@@ -1,0 +1,21 @@
+﻿@model List<Sehmus.DataAccess.Entities.Resume>
+<section id="resume" class="resume">
+    <div class="container">
+
+        <div class="section-title">
+            <h2>Özgeçmiş</h2>
+        </div>
+        <div class="row">
+            @foreach (var item in Model)
+            {
+            <h3 class="resume-title">@item.Title1</h3>
+            <div class="resume-item">
+                <h4>@item.Title2</h4>
+                <h5>@item.Date</h5>
+                <p><em>@item.Description1</em></p>
+                <p>@item.Description2</p>
+            </div>
+            }
+        </div>
+    </div>
+</section><!-- End Resume Section -->

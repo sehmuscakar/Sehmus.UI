@@ -1,0 +1,26 @@
+﻿@model List<Sehmus.DataAccess.Entities.Portfolio>
+<section id="portfolio" class="portfolio section-bg">
+
+    <div class="container">
+        <div class="section-title">
+            <h2>Portföy</h2>
+        </div>
+        @foreach (var item in Model)
+        {
+            <div class="row portfolio-container" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+                    <div class="portfolio-wrap">
+                        <img src="~/Img/@item.ImageUrl1" class="img-fluid" alt="">
+                        <div class="portfolio-info">
+                            <h4>@item.Title</h4>
+                        </div>
+                        <div class="portfolio-links">
+                            <a href="~/Img/@item.ImageUrl1" data-gallery="portfolioGallery" class="portfolio-lightbox" title="@item.Title"><i class="bx bx-plus"></i></a>
+                            <a href="/Home/Portfolio/@item.Id" title="Detaya Git"><i class="bx bx-link"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</section><!-- End Portfolio Section -->

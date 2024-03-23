@@ -1,0 +1,59 @@
+﻿@model Sehmus.DataAccess.Entities.Header
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Edit";
+    Layout = "~/Areas/Admin/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h4>Sidebar Güncelleme Paneli</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit" enctype="multipart/form-data">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="ImageUrl" class="control-label"></label>
+                <input asp-for="ImageUrl" class="form-control" type="file" />
+                <span asp-validation-for="ImageUrl" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="FullName" class="control-label"></label>
+                <input asp-for="FullName" class="form-control" />
+                <span asp-validation-for="FullName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Youtube" class="control-label"></label>
+                <input asp-for="Youtube" class="form-control" />
+                <span asp-validation-for="Youtube" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="İnstagram" class="control-label"></label>
+                <input asp-for="İnstagram" class="form-control" />
+                <span asp-validation-for="İnstagram" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Github" class="control-label"></label>
+                <input asp-for="Github" class="form-control" />
+                <span asp-validation-for="Github" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Linkedin" class="control-label"></label>
+                <input asp-for="Linkedin" class="form-control" />
+                <span asp-validation-for="Linkedin" class="text-danger"></span>
+            </div>
+         
+
+            <br />
+            <div class="form-group">
+                <input type="submit" value="Kaydet" class="btn btn-outline-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<hr />
+<div>
+    <a class="btn btn-secondary" asp-action="Index">Listeye Geri Dön</a>
+</div>
+
