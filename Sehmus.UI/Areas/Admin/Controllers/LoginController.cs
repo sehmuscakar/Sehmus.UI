@@ -54,10 +54,10 @@ namespace Sehmus.UI.Areas.Admin.Controllers
 
 
 
-        public IActionResult Error404(int code)//program.cs te bu premtreeyi verdik
-        {
-            return View();
-        }
+        //public IActionResult Error404(int code)//program.cs te bu premtreeyi verdik
+        //{
+        //    return View();
+        //}
         [HttpGet]
         public async Task<IActionResult> LogOut()//sistemden çıkış yapma
         {

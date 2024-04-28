@@ -17,7 +17,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<ProjeContextDb>(opt => //contextteki constractýr sýkýntý yaratýðý için diðer yöntemi kullandým.
 {
-    opt.UseSqlServer(builder.Configuration.GetConnectionString("Local"));
+    opt.UseSqlServer(builder.Configuration.GetConnectionString("Host"));
 });
 
 builder.Services.AddScoped<IHeaderDal,HeaderDal>();
@@ -56,7 +56,7 @@ config.Filters.Add(new AuthorizeFilter(policy));
 
 builder.Services.AddAuthentication(CookieAuthenticationDefaults.AuthenticationScheme).AddCookie(x => //otonatike olmayan kýsmý buraya yunlendirecek bunu yapmadan da  [AllowAnonymous] bu kodu controllera yazarak ta yapabilirsin 
 {
-    x.LoginPath = "/Admin/Login/SignÝn";
+    x.LoginPath = "/Admin/Login/SignIn";
 });
 var app = builder.Build();
 
@@ -67,7 +67,7 @@ if (!app.Environment.IsDevelopment())
     // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
     app.UseHsts();
 }
-app.UseStatusCodePagesWithReExecute("/Admin/Login/Error404", "?code={0}");
+//app.UseStatusCodePagesWithReExecute("/Admin/Login/Error404", "?code={0}");
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();

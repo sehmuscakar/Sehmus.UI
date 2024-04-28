@@ -1,9 +1,11 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Sehmus.Business.Abstarct;
 
 
 namespace Sehmus.UI.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         private readonly IPortfolioService _portfolioService;
